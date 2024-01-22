@@ -1,0 +1,1491 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My test page</title>
+  <link rel="stylesheet" href="fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+  <style>
+    :root{--primary: #1c1b1beb;}
+body{background-color: rgba(255, 255, 255, 0.157);}
+.logo,.location,.account-list,.returns-orders{padding-left: 2px;}
+.header{padding-left: 4px;;display: flex;flex-direction: row;background-color: var(--primary);margin-top: 0;padding-bottom: 0px;padding-top: 4px;}
+.logo{width: fit-content;;height: 44px;background-color: #000;padding-top: 2px;margin-right: 4px;padding-right: 10px;}
+.logo:hover{outline: 3px solid rgba(107, 222, 107, 0.761);}
+.location{cursor: pointer;background-color: transparent;display: flex;flex-direction: row;padding-right: 10px;margin-right: 14px;}
+.location:hover{outline: 3px solid rgba(107, 222, 107, 0.761);}
+.fa-location-dot{display: inline;padding-right: 4px;;color:white;font-size: 20px;padding-top: 2px;}
+.location-data{display: inline;margin: 0;;color: #fff;padding-top: 2px;}
+.cater{margin-top: 10%;margin-bottom: 10%;height: 40px;;width: 66px;background-color: rgb(243, 242, 242);font-size: 16px;text-align: center;;outline: none;border-top-left-radius: 6px;border-bottom-left-radius: 6px;}
+.cater:hover{box-shadow: 0 0 1px 2px orange;background-color: rgba(210, 26, 213, 0.224);}
+.input-search{width: 740px;height: 34px;margin-top: 5px;outline:none;font-size: 16px;}
+.input-search:hover{border: none;box-shadow: 0 0 1px 2px orange;}
+.fa-search{color:white;background-color: orange;margin-top: 0.399rem;;font-size: 18px;padding-top: 8px;padding-bottom: 9px;border:1px solid orange;width: 50px;text-align: center;border-top-right-radius: 6px;border-bottom-right-radius: 6px;}
+.fa-search:hover{box-shadow: 0 0 1px 2px orange;}
+.search-bar{margin-right: 4px;padding-right: 10px;}
+.account-list{margin-right: 4px;padding-right: 10px;}
+.account-list:hover{outline: 3px solid rgba(107, 222, 107, 0.761);}
+.account-list>span{color:white;font-size: 12px;}
+.account{font-style: 16px;font-weight: 700;letter-spacing: -1px ;background-color: transparent;color: #fff;border: none;}
+.returns-orders{background-color: transparent;color:white;font-size: 16px;margin-right: 4px;padding-right: 10px;}
+.returns-orders:hover{outline: 3px solid rgba(107, 222, 107, 0.761);}
+/* Sidebar */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.nav-open, .deals{cursor: pointer;border: none;background-color: transparent;font-size: 22px;}
+.nav-open>span, .deals{font-size: 20px;}
+.deals{padding: 10px;}
+.nav-open:hover, .deals:hover{border: 1px solid black;padding: 8px;}
+.sidebar{position: fixed;margin-left:-300px;margin-top: 12px;width: 300px;border-right: 1px solid orange;}
+.sub-header{background-color: rgb(87, 184, 248);}
+.signin-tag, .tag-2 , .href1, .sidebar div>select, .nav-open, .tab-head,  .sign-in, .block-1 a , .tab1-content a, .flow-head, .back-to-top , li , .test-head{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+.signin-tag{background-color: #000;color: #fff;width: fit-content;padding: 4px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+.href1{width: 260px;display: inline-block;text-decoration: none;color:black;font-size: 16px;}
+.sidebar span{width: 20px;}
+.sidebar div{width: fit-content;padding: 4px 10px 10px 4px;}
+.sidebar div:hover{background-color: rgb(227, 227, 227);}
+.sidebar div>select{font-size: 16px;padding: 4px 10px 10px 4px;width: 80px;border:none;}
+.sidebar div>select:hover{background-color: rgb(227, 227, 227);}
+.block-1{display: flex;flex-direction: row;justify-content: space-around;background-color: rgba(255, 255, 255, 0.782);margin-top: 10px;width: 100%;}
+.block-1 a , .tab1-content a{font-weight: 600;text-decoration: none;color: rgb(87, 184, 248);}
+.tab1, .tab2 {margin: 6px;border:1px solid grey;background-color: #fcebf1;width: 22%;height: 400px;}
+.tab-head{margin:4px;font-size: 20px;font-weight: 600;}
+.tab1-content{display: grid;grid-template-columns:auto auto;padding: 10px;font-size: 14px;width:80%;height: 75%;}
+.tab1-content img{width: 130px;height:120px;}
+.tab1-content img:hover,.tab2-content img:hover{cursor: pointer;}
+.tab1-content .row1{width: 130px;height: 120px;}
+.tab2-content{padding: 10px;width: 300px;}
+.tab2-content img{height: 280px;width: 280px;}
+.h-images{overflow: auto;white-space: nowrap;}
+.h-images img{padding: 10px;}
+.kitchen, .toys{background-color: #fff;margin-top: 10px;border: 1px solid black;}
+.kitchen img, .toys img{margin-right: 10px;}
+.block-2with-flow{overflow: auto;white-space: nowrap;margin-top: 10px;}
+.block-2with-flow .tab2{display: inline-block;}
+.block-2with-flow a{text-decoration: none;}
+.sign-in{border: 1px solid grey;text-align: center;padding-bottom: 30px;}
+.sign-btn{width: 240px;height: 30px;font-size: 16px;font-weight: 500;border: none;border-radius: 4px;background-color: rgba(248, 178, 46, 0.972);}
+.flow-head{height: 140px;}
+.back-to-top{margin-top: 10px;padding-top: 10px;padding-bottom: 10px;text-decoration: none;;display: block;text-align: center;color: #fff;background-color: #010336bd;font-size: 20px;}
+.back-to-top:hover{background-color: #000000f1;}
+.testimonials, .lists{padding-bottom: 20px;;font-weight: 600;font-size: 20px;color:#fff}
+.lists ul{list-style-type: none;display: inline-block;}
+.lists ul li a{text-decoration: none;color: #fff;font-weight: 400;font-size: 18px;line-height: 30px;color: #ffffffe4;}
+.lists{padding-left: 100px;padding-right: 100px;justify-content: space-around;display: flex;background-color: #000013dc;}
+.test-head{line-height: 66px;}
+.image-wrapper {position: relative;display: block;object-fit: cover;}
+.slide-block {position: absolute;left: 0;top: 50%;padding: .5rem;margin: 4px;}
+.left-arrow{position: absolute;height: 50%;width: 100px;font-size: 30px;background-color: transparent;border: none;}
+.left-arrow:hover, .right-arrow:hover{border: 1px solid black;background-color: #ececec;opacity: 0.4;font-size: 46px;}
+.right-arrow{position: absolute;left:92%;height: 50%;width: 100px;font-size: 30px;background-color: transparent;border: none;}
+datalist{background-color: white;border: 1px solid rgba(255, 255, 255, 0.782);border-radius: 0 0 5px 5px;border-top: none;width: 700px;padding: 5px;min-height: 100px;overflow-y: auto;}
+option{background-color: #fff;color: rgba(255, 255, 255, 0.157);padding: 4px;margin-bottom: 1px;cursor: pointer;}
+</style>
+</head>
+<body>
+  <div>
+  <div 
+  class="header">
+    <div class="logo">
+      <a href="https://www.amazon.com">
+        <img 
+        src="amazon.png" 
+        alt="Amazon logo"
+        width="120px"
+        height="40px"
+        >
+      </a>
+    </div>
+
+    <div class="location"
+    onclick="location.href='login.html'">
+      <i class="fa-solid fa-location-dot"></i>
+      <p class="location-data">Deliver to<br> <strong>India</strong></p>
+    </div>
+
+    <div class="categories">
+      <select name="cater" class="cater">
+        <option value="">All</option>
+        <option value="">Computers</option>
+        <option value="">Smart Home</option>
+        <option value="">Arts & Crafts</option>
+        <option value="">Gift Cards</option>
+        <option value="">Shop by Interest</option>
+        <option value="">Amazon Live</option>
+        <option value="">Electronics</option>
+        <option value="">Amazon Appstore</option>
+        <option value="">Kindle E-readers & Books</option>
+        <option value="">Amazon Music</option>
+        <option value="">Digital Content & Devices</option>
+        <option value="">See all</option>
+      </select>
+     
+    </div>
+
+    <div class="input-field">
+     
+        <input 
+      type="text" 
+      placeholder="Search amazon"
+      class="input-search"
+      list=""
+      id="input"
+      autocomplete="off"
+      role="combobox"
+      name="browsers"
+      >
+      
+      <datalist 
+      id="browsers"
+      role="listbox">
+        <option value="arts">arts</option>
+        <option value="books">books</option>
+        <option value="crafts">crafts</option>
+        <option value="Deodrants">Deodrants</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Glasses">Glasses</option>
+        <option value="Home appliances">Home appliances</option>
+        <option value="Indoor plants">Indoor plants</option>
+        <option value="Jackets">Jackets</option>
+        <option value="Kitchen appliances">Kitchen appliances</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Makeup">Makeup</option>
+      </datalist>
+
+      <script>
+        input.onfocus = function(){
+          browsers.style.display='block';
+          input.style.borderRadius = "5px 5px 0 0";
+        };
+        for(let option of browsers.options) {
+          option.onclick = function() {
+            input.value = option.value;
+            browsers.style.display = 'none';
+            input.style.borderRadius = "5px";
+          }
+        };
+
+        input.oninput = function() {
+  currentFocus = -1;
+  var text = input.value.toUpperCase();
+  for (let option of browsers.options) {
+    if(option.value.toUpperCase().indexOf(text) > -1){
+      option.style.display = "block";
+  }else{
+    option.style.display = "none";
+    }
+  };
+}
+var currentFocus = -1;
+input.onkeydown = function(e) {
+  if(e.keyCode == 40){
+    currentFocus++
+   addActive(browsers.options);
+  }
+  else if(e.keyCode == 38){
+    currentFocus--
+   addActive(browsers.options);
+  }
+  else if(e.keyCode == 13){
+    e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (browsers.options) browsers.options[currentFocus].click();
+        }
+  }
+}
+
+function addActive(x) {
+    if (!x) return false;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    x[currentFocus].classList.add("active");
+  }
+  function removeActive(x) {
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("active");
+    }
+  }
+
+      </script>
+    </div>
+
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <div class="account-list">
+      <span>
+        Hello, sign in
+        <br>
+        <strong>
+          <select class="account">
+            <option value="">Account & Lists</option>
+            <option value="">My account</option>
+            <option value="">Followed</option>
+          </select>
+        </strong>
+      </span>
+    </div>
+
+    <div class="returns-orders">
+      <span>
+        Returns
+        <br>
+        <strong>&Orders</strong>
+      </span>
+    </div>
+  </div>
+<!-- header-->
+  <div 
+  class="sub-header">
+  <button 
+    class="nav-open" 
+    onclick="open()">
+    <i class="fas fa-bars"></i>
+    <span>All</span>
+  </button>
+
+  <button
+    class="deals">
+    Today's Deals
+  </button>
+  
+  <button
+    class="deals">
+    Registry
+  </button>
+
+  <button
+    class="deals">
+      Customer Service
+  </button>
+
+  <button
+    class="deals">
+    Gift Cards
+  </button>
+
+  <button
+    class="deals">
+    Sell
+  </button>
+  </div>
+<!-- Sub header -->
+  <div class="image-wrapper">
+   <button class="left-arrow">&larr;</button>
+  <button class="right-arrow">&rarr;</button>
+    
+  <img 
+  src="slide1.jpg" 
+  class=".image-wrapper"
+  width="100%"
+  height="920px"
+  alt="">
+  </div>
+ 
+  <div 
+    class="slide-block block-1">
+    <div 
+    class="tab1">
+    <h4
+      class="tab-head">
+      Gaming Accessories
+    </h4>
+    <div 
+    class="tab1-content"> 
+    <a href="#" class="row1">
+      <img 
+      src="head-phone.jpg" alt=""><br>
+      Headphones
+    </a>
+    
+    <a href="#">
+      <img 
+      src="keyboard.jpg" alt=""><br>
+      Keyboards
+    </a>
+
+
+    <a href="#"  class="row1">
+      <img 
+      src="mouse.jpg" alt=""><br>
+      Computer Mouse
+    </a>
+
+    <a href="#">
+      <img 
+      src="chair.jpg" alt=""><br>
+      Chairs 
+    </a>  
+    </div>
+    <a href="#">Shop now</a>
+    </div>
+    <div 
+    class="tab2">
+      <h4 
+      class="tab-head">
+      Deals in PCs
+      </h4>
+      <div class="tab2-content">
+        <a href="#">
+          <img 
+          src="PC.jpg" alt="">
+        </a>
+      </div>
+      <a href="#">Shop now</a>
+    </div>
+
+    <div class="tab2">
+      <h4 
+      class="tab-head">
+      Toys under $25
+      </h4>
+      <div class="tab2-content">
+        <a href="#">
+          <img 
+          src="Toys.jpg" alt="">
+        </a>
+      </div>
+      <a href="#">Shop now</a>
+    </div>
+    <div class="tab1">
+      <h4 
+      class="tab-head">
+      Refresh your space
+      </h4>
+      <div class="tab1-content">
+        <a href="#" class="row1">
+          <img 
+          src="dining.jpg" alt=""><br>
+          Dining
+        </a>
+        
+        <a href="#">
+          <img 
+          src="home.jpg" alt=""><br>
+          Home
+        </a>
+    
+    
+        <a href="#"  class="row1">
+          <img 
+          src="kitchen.jpg" alt=""><br>
+          Kitchen
+        </a>
+    
+        <a href="#">
+          <img 
+          src="health.jpg" alt=""><br>
+          Health and Beauty
+        </a>  
+        </div>
+        <a href="#">Shop now</a>
+      </div>
+    </div>
+<!-- block 1 div -->
+    <div class="block-1">
+      <div 
+    class="tab2">
+      <h4 
+      class="tab-head">
+      Top Deal
+      </h4>
+      <div class="tab2-content">
+        <a href="#">
+          <img 
+          src="BP-meter.jpg" alt="">
+          Thermometers and BP Monitors
+        </a>
+      </div>
+      <a href="#">Shop now</a>
+    </div>
+    <!-- box 1 -->
+      <div 
+    class="tab1">
+    <h4
+      class="tab-head"
+      style="width: 300px;">
+      Fashion trends you like
+    </h4>
+    <div 
+    class="tab1-content"> 
+    <a href="#" class="row1">
+      <img 
+      src="dresses.jpg" alt=""><br>
+      Dresses
+    </a>
+    
+    <a href="#">
+      <img 
+      src="kurtis.jpg" alt=""><br>
+      Kurtis
+    </a>
+
+
+    <a href="#"  class="row1">
+      <img 
+      src="jackets.jpg" alt=""><br>
+      Jackets
+    </a>
+
+    <a href="#">
+      <img 
+      src="jewel.jpg" alt=""><br>
+      Jewelry 
+    </a>  
+    </div>
+    <a href="#">Shop now</a>
+    </div>
+    <!-- box 2 -->
+    <div 
+    class="tab2">
+      <h4 
+      class="tab-head">
+      Lunar New Year
+      </h4>
+      <div class="tab2-content">
+        <a href="#">
+          <img 
+          src="lunar.jpg" alt="">
+        </a>
+      </div>
+      <a href="#">Shop now</a>
+    </div>
+    <!-- box 3 -->
+    <div 
+    class="tab2">
+      <h4 
+      class="tab-head"
+      style="width: 300px;">
+      Beauty steals under $25
+      </h4>
+      <div class="tab2-content">
+        <a href="#">
+          <img 
+          src="beauty.jpg" alt="">
+        </a>
+      </div>
+      <a href="#">Shop now</a>
+    </div>
+    <!-- box 4 -->
+    </div>
+<!-- block-1 div --> 
+
+    <div class="block-3 toys">
+  <h4 class="tab-head">
+    Best Sellers in Toys and Games 
+  </h4>
+  <div class="h-images">
+  <img src="spray.jpg" alt="">
+  <img src="sankranthi.jpg" alt="">
+  <img src="oils.jpg" alt="">
+  <img src="watch.jpg" alt="">
+  <img src="eye.jpg" alt="">
+  <img src="book.jpg" alt="">
+  <img src="k2.jpg" alt="">
+  <img src="book3.jpg" alt="">
+  <img src="books.jpg" alt="">
+  <img src="book4.jpg" alt="">
+</div>
+    </div>
+<!-- block-3 div -->
+<div class="block-2with-flow">
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+</div>
+<!-- block2 with flow -->
+    <div class="block-3 kitchen">
+  <h4 class="tab-head">
+    Best Sellers in Kitchen and Dining
+  </h4>
+  <div class="h-images">
+  <img src="gloves.jpg" alt="">
+  <img src="moist.jpg" alt="">
+  <img src="paper.jpg" alt="">
+  <img src="presto.jpg" alt="">
+  <img src="perfume.jpg" alt="">
+  <img src="tissue.jpg" alt="">
+  <img src="tissue2.jpg" alt="">
+  <img src="tea.jpg" alt="">
+  <img src="tones.jpg" alt="">
+  <img src="watch.jpg" alt="">
+</div>
+    </div>
+<!-- block-3 div -->
+<div class="block-1">
+
+  <div 
+  class="tab2">
+    <h4 
+    class="tab-head">
+    Shop activity trackers and smartwatches
+    </h4>
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="tracker.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">Shop now</a>
+  </div>
+
+  <div 
+  class="tab1">
+  <h4
+    class="tab-head">
+    Gaming merchandise
+  </h4>
+  <div 
+  class="tab1-content"> 
+  <a href="#" class="row1">
+    <img 
+    src="apparel.jpg" alt=""><br>
+    Apparel
+  </a>
+  
+  <a href="#">
+    <img 
+    src="hat.jpg" alt=""><br>
+    Hats
+  </a>
+
+
+  <a href="#"  class="row1">
+    <img 
+    src="figures.jpg" alt=""><br>
+    Action Figures
+  </a>
+
+  <a href="#">
+    <img 
+    src="mug.jpg" alt=""><br>
+    Mugs
+  </a>  
+  </div>
+  <a href="#">Shop now</a>
+  </div>
+  
+  <div class="tab2">
+    <h4 
+    class="tab-head">
+    Player's paradise starts here
+    </h4>
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="video.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">Shop now</a>
+  </div>
+  <div class="tab1">
+    <h4 
+    class="tab-head">
+    Warm & Welcoming decor
+    </h4>
+    <div class="tab1-content">
+      <a href="#" class="row1">
+        <img 
+        src="wreath.jpg" alt=""><br>
+        Wreaths & Garlands
+      </a>
+      
+      <a href="#">
+        <img 
+        src="outdoor.jpg" alt=""><br>
+        Outdoor decor
+      </a>
+  
+  
+      <a href="#"  class="row1">
+        <img 
+        src="illow.jpg" alt=""><br>
+        pillows & thraws
+      </a>
+  
+      <a href="#">
+        <img 
+        src="mirror.jpg" alt=""><br>
+        Wall art & mirrors
+      </a>  
+      </div>
+      <a href="#">Shop now</a>
+    </div>
+  </div>
+<!-- block 1 div -->
+</div>
+<!-- Container of above divs -->
+
+<div class="block-2with-flow">
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+
+  <div 
+  class="tab2">    
+    <div class="tab2-content">
+      <a href="#">
+        <img 
+        src="learn.jpg" alt="">
+      </a>
+    </div>
+    <a href="#">
+    <span 
+    class="flow-head">
+    Learning Resources Answer Buzzers - 
+    <br>
+    Set of 4, Ages 3+, Assorted Colored Buzzers
+    <br>
+    , Game Show Buzzers, Perfect for Family
+    <br> 
+    Game and Trivia Nights, for Kids
+    </span>
+    </a>
+  </div>
+</div>
+
+<div class="sign-in">
+  <p>See personalized recommendations</p>
+  <button class="sign-btn">Sign in</button><br>
+  <span>New Customer?</span><a href="#">Start here.</a>
+</div>
+
+<div class="testimonials">
+  <a href="#" 
+  class="back-to-top">
+  Back to Top
+</a>
+<div class="lists">
+<ul class="test-1">
+  <li><label class="test-head">
+    Get to Know Us
+  </label></li>
+  <li><a href="">Careers</a></li>
+  <li><a href="">Blog</a></li>
+  <li><a href="">About Amazon</a></li>
+  <li><a href="">Investor Relations</a></li>
+  <li><a href="">Amazon Devices</a></li>
+  <li><a href="">Amazon Science</a></li>
+</ul>
+
+<ul class="test-2">
+  <li><label class="test-head">
+    Make money with us
+  </label></li>
+  <li><a href="">Sell Products on Amazon</a></li>
+  <li><a href="">Sell on Amazon Business</a></li>
+  <li><a href="">Sell apps on Amazon</a></li>
+  <li><a href="">Become an Affiliate</a></li>
+  <li><a href="">Advertise Your Products</a></li>
+  <li><a href="">Self-Publish with Us</a></li>
+  <li><a href="">Host an Amazon Hub</a></li>
+  <li><a href="">See More Make money with us</a></li>
+</ul>
+
+<ul class="test-3">
+<li><label class="test-head">
+  Amazon Payment Products
+</label></li>
+  <li><a href="">Amazon Business Card</a></li>
+  <li><a href="">Shop with Points</a></li>
+  <li><a href="">Reload Your Balance</a></li>
+  <li><a href="">Amazon Currency Converter</a></li>
+</ul>
+
+<ul class="test-4">
+  <li><label class="test-head">
+    Let Us Help You
+  </label></li>
+  <li><a href="">Amazon and Covid-19</a></li>
+  <li><a href="">Your account</a></li>
+  <li><a href="">Your Orders</a></li>
+  <li><a href="">Shipping Rates & Policies</a></li>
+  <li><a href="">Returns & Replacements</a></li>
+  <li><a href="">Manage your Content and Devices</a></li>
+  <li><a href="">Amazon Assistant</a></li>
+  <li><a href="">Help</a></li>
+</ul>
+</div>
+</div>
+  <div class="sidebar">
+    <button 
+      onclick="close()" 
+      class="cancel">
+      &times;
+    </button>
+    <h2 
+    class="signin-tag">
+    <i class="fa-solid fa-user"></i>
+      Hello, sign in
+    </h2>
+    <!-- Digital content & Devices -->
+    <h3 
+    class="tag-2">
+    Digital Content & Devices
+    </h3>
+    <div>
+      <a href="#" class="href1">
+        Amazon Music
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Kindle E-readers & Books
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Amazon Appstore
+      </a>
+      <span>&#8594;</span>
+    </div>
+    
+    <!-- Shop by Department -->
+    <h3 
+    class="tag-2">
+    Shop By Department
+    </h3>
+    <div>
+      <a href="#" class="href1">
+        Electronics
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Computers
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Smart Home
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Arts & Crafts
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <select class="see-all">
+      <option value="">See all</option>
+      <option value="">Automotive</option>
+      <option value="">Baby</option>
+      <option value="">Women's</option>
+    </select>
+    </div>
+<!-- Programs & Features -->
+    <h3 
+    class="tag-2">
+    Programs & Features
+    </h3>
+    <div>
+      <a href="#" class="href1">
+        Gift Cards
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Shop by Interest
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        Amazon Live
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <a href="#" class="href1">
+        International Shopping
+      </a>
+      <span>&#8594;</span>
+    </div>
+    <div>
+      <select class="see-all">
+      <option value="">See all</option>
+      <option value="">Automotive</option>
+      <option value="">Baby</option>
+      <option value="">Women's</option>
+    </select>
+    </div>
+    
+  </div>
+
+  <script>
+  function open()
+  {
+    document.getElementById("sidebar").style.width = "100%";
+    document.getElementById("sidebar").style.display = "block";
+  }
+
+  function close()
+  {
+    document.getElementById("sidebar").style.display = "none";
+  }
+  </script>
+</body>
+<script type="text/javascript">
+
+</script>
+</html>
+<!--
+ div {
+  background-color: rgba(0, 0, 0, 0.858);
+  
+}
+
+img {
+  width: 160px;
+  height: 40px;
+} 
+ <div>
+  <img src="amazon.png" alt="">
+</div> -->
+
+<!--
+
+  div {
+      width: 100px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.858);
+
+    }
+
+    p,
+    i {
+      color: aliceblue;
+    }
+
+    i {
+      margin-left: 3px;
+      margin-top: 3px;
+      color: orange;
+      font-size: large;
+    }
+
+    #cty {
+      margin-left: 20px;
+    }
+
+    p {
+      display: inline;
+      text-align: right;
+    }
+
+     <div>
+
+    <i class="fa-solid fa-location-dot"></i>
+    <p>Deliver to
+    </p>
+    <p id="cty"><b>India</b></p>
+
+  </div>
+-->
+
+<!-- 
+  <div>
+    <select name="" id="cater">
+      <option value="">All</option>
+      <option value="">Arts</option>
+      <option value="">Arts</option>
+      <option value="">Arts</option>
+      <option value="">Arts</option>
+      <option value="">Arts</option>
+      <option value="">Science</option>
+      <option value="">Science</option>
+      <option value="">Science</option>
+      <option value="">Science</option>
+      <option value="">Science</option>
+    </select>
+    <input type="text">
+    <button><i class="fa-solid fa-search"></i></button>
+  </div>
+
+  #cater {
+      background-color: rgb(213, 212, 212);
+      width: 40px;
+      height: 36px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+
+      position: absolute;
+    }
+
+    input {
+      width: 260px;
+      height: 30px;
+
+    }
+
+    button {
+      margin-top: 1px;
+      font-size: large;
+      position: fixed;
+      left: 242px;
+      width: 33px;
+      height: 34px;
+      border: 0;
+      background-color: orange;
+    }
+ -->
+
+<!-- 
+
+  div {
+      background-color: rgba(0, 0, 0, 0.858);
+      width: 144px;
+      height: 40px;
+      padding-left: 6px;
+
+    }
+
+    p {
+      padding-top: 4px;
+    }
+
+    p,
+    select {
+      color: aliceblue;
+      font-size: 15px;
+
+    }
+
+    select {
+      border: 0;
+      font-weight: bold;
+      background-color: transparent;
+    }
+
+    <div>
+    <p>Hello, sign in
+      <select name="account" id="account">
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+        <option value="">Accounts & Lists</option>
+      </select>
+    </p>
+  </div>
+  -->
+
+<!-- 
+    div {
+      background-color: rgba(0, 0, 0, 0.858);
+      width: 72px;
+      height: 40px;
+    }
+
+    p {
+      color: aliceblue;
+      font-size: 15px;
+      padding-top: 4px;
+      margin-left: 4px;
+    }
+    <div>
+    <p>Returns<br><b>& Orders</b></p>
+  </div>
+   -->
+
+<!-- 
+     div {
+      background-color: rgba(0, 0, 0, 0.858);
+      height: 32px;
+      width: 54px;
+    }
+
+    i,
+    p {
+      color: white;
+    }
+
+    i {
+      font-size: large;
+    }
+
+    p {
+      font-size: 15px;
+      margin-left: 4px;
+      padding-top: 4px;
+    }
+
+    <div>
+    <p>
+      <i class="fa-solid fa-cart-shopping"></i>Cart
+    </p>
+  </div>
+    -->
